@@ -263,7 +263,7 @@
       <editor
             class="net.bioclipse.ui.editors.XMLEditor"
             contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
-            extensions="xml,cml"
+            extensions="xml,cml,nmx"
             icon="icons/logo_16_trans.gif"
             id="net.bioclipse.ui.editors.XMLEditor"
             default="false"
