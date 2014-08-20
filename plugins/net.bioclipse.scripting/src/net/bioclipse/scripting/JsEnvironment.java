@@ -103,11 +103,17 @@ public class JsEnvironment implements ScriptingEnvironment {
                 }
                 IBioclipseManager manager = (IBioclipseManager) service;
                 String managerName = manager.getManagerName();
-                engine.put( managerName, manager );
-                managers.put( managerName, manager);
-                logger.info( "Bioclipse manager: " + managerName +
-                             " added to JavaScript " +
-                             "environment." );
+                if (engine != null) {
+                	engine.put( managerName, manager );
+                	managers.put( managerName, manager);
+                	logger.info( "Bioclipse manager: " + managerName +
+                			" added to JavaScript " +
+                			"environment." );
+                } else {
+                	logger.warn( "Bioclipse manager: " + managerName +
+                			" not added to JavaScript " +
+                			"environment." );
+                }
             }
         }
 
@@ -120,6 +126,8 @@ public class JsEnvironment implements ScriptingEnvironment {
      * @return the result of the expression
      */
     public Object eval(String expression) {
+    	if (engine == null)
+    		throw new RuntimeException("No JavaScript engine");
         try {
             Object o = engine.eval(expression);
             return o;

@@ -50,11 +50,13 @@ public class JsThread extends ScriptingThread {
     private static void initJs() {
         busy = true;
         js = new JsEnvironment();
-
-        for (Map.Entry<String, String[]> e : topLevelCommands.entrySet())
-            js.eval( "function " + e.getKey()
-                     + "(" + e.getValue()[0] + ")"
-                     + " { " + e.getValue()[1] + " }" );
+        
+        if (js.engine != null) {
+        	for (Map.Entry<String, String[]> e : topLevelCommands.entrySet())
+        		js.eval( "function " + e.getKey()
+        				+ "(" + e.getValue()[0] + ")"
+        				+ " { " + e.getValue()[1] + " }" );
+        }
     }
 
     public void run() {
