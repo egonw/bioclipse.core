@@ -50,6 +50,10 @@ public class JsEnvironment implements ScriptingEnvironment {
         ScriptEngineManager mgr
             = new ScriptEngineManager(JsEnvironment.class.getClassLoader());
         engine = mgr.getEngineByName("JavaScript");
+        if (engine == null) {
+        	// try the Java 1.8 one
+        	engine = mgr.getEngineByName("nashorn");
+        }
         if ( engine == null ) {
             StringBuilder builder = new StringBuilder();
             for ( ScriptEngineFactory sef : mgr.getEngineFactories() ) {
