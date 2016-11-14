@@ -94,7 +94,7 @@ public class HTMLSerializer implements ISerializer {
                         buffer.append("<tr>");
                         for (int j=1; j<=matrix.getColumnCount(); j++) {
                             buffer.append("<td>").append(
-                                matrix.get(i, j)
+                                matrix.get(i, j) == null ? "" : matrix.get(i, j)
                             ).append("</td>");
                         }
                         buffer.append("</tr>");
