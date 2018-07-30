@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target name="Bioclipse (Eclipse 4.5)" sequenceNumber="203">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><?pde version="3.8"?><target name="Bioclipse (Eclipse 4.5)" sequenceNumber="203">
 <locations>
 <location includeAllPlatforms="true" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.rcp.id" version="4.5.2.M20160212-1500"/>
@@ -323,7 +322,6 @@
 </location>
 <location includeAllPlatforms="true" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="net.bioclipse.cdk.jcp" version="1.5.13.160531-172438"/>
-<unit id="org.openscience.cdk_bundle" version="1.5.13.20160830_105149"/>
 <unit id="beam-exec" version="0.9.1"/>
 <repository location="http://pele.farmbio.uu.se/bioclipse/cdk/cdk-1.5.13/"/>
 </location>
@@ -334,5 +332,6 @@
 <unit id="de.walware.rj.eclient.feature.group" version="2.0.5.b201604071800"/>
 <repository location="http://pele.farmbio.uu.se/bioclipse/2.6/walware"/>
 </location>
+	<location path="/home/egonw/var/Projects/GitHub/bc26/bioclipse.core/cdknew" type="Directory"/>
 </locations>
 </target>
